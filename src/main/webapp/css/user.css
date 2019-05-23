@@ -1,0 +1,28 @@
+body {
+    background-image: url("../img/liufeng1.jpg");
+    /*background-color: aquamarine;*/
+    font-size: 25px;
+}
+.login {
+    margin: 200px 35% 200px 65%;
+    background-color: khaki;
+    width: 350px;
+    height: 250px;
+    text-align: center;
+    vertical-align: center;
+}
+.anniu {
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #c5d4e9;
+}
+
+.register {
+    margin: 100px 40% 200px 40%;
+    background-color: #f0ef9b;
+    width: 350px;
+    height: 300px;
+    text-align: center;
+    vertical-align: center;
+}
