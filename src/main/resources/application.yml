@@ -1,0 +1,14 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /demo
+    #jsp热部署
+    jsp:
+      init-parameters:
+        development: true
+
+spring:
+  mvc:
+    view:
+      suffix: /
+      prefix: .jsp
