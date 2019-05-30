@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<% String path = request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 </head>
 <body>
     <div class="login">
-        <form action="#" method="post">
+        <form action="<%path%>/user/selectUser" method="post">
             <br/>
             账号：<input type="text" name="username"/><br/><br/>
             密码：<input type="password" name="password"><br/><br/>

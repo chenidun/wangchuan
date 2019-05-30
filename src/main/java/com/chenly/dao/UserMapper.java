@@ -15,8 +15,8 @@ public interface UserMapper {
     Integer insertOne(User user);
     void updateUser(User user);
 
-    /*User selectByNameAndPwd(String username, String password);
-    List<User> selectAll();*/
+//    User selectByNameAndPwd(String username, String password);
+    List<User> selectAll();
     User selectById(@Param("id") Integer id);
     void deleteUser(@Param("id") Integer id);
 }

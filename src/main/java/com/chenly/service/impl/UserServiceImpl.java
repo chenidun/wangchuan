@@ -6,6 +6,8 @@ import com.chenly.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author wangchuan
  * @date 2019/5/30.
@@ -29,6 +31,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User selectUser(Integer id) {
         return userMapper.selectById(id);
+    }
+
+    @Override
+    public List<User> selectAll() {
+        return userMapper.selectAll();
     }
 
     @Override

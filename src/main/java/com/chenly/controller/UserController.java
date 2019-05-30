@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @author wangchuan
  * @date 2019/5/30.
@@ -35,6 +37,12 @@ public class UserController {
     @ResponseBody
     public User selectUser(Integer id){
         return userService.selectUser(id);
+    }
+
+    @RequestMapping("/selectAll")
+    @ResponseBody
+    public List<User> selectAll(){
+        return userService.selectAll();
     }
 
     @RequestMapping("/deleteUser")

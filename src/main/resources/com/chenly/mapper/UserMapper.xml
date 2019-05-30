@@ -62,6 +62,10 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
 
+    <select id="selectAll" resultType="User">
+        select id,username,realname,password,email from users
+    </select>
+
     <delete id="deleteUser" parameterType="integer">
         delete from users where id = #{id,jdbcType=INTEGER}
     </delete>
