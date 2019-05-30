@@ -12,3 +12,15 @@ spring:
     view:
       suffix: /
       prefix: .jsp
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/biglemon?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+#  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:com/chenly/mapper/*.xml
+  type-aliases-package: com.chenly.model
+

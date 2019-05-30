@@ -1,6 +1,8 @@
 package com.chenly.dao;
 
 import com.chenly.model.User;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -8,11 +10,13 @@ import java.util.List;
  * @author wangchuan
  * @date 2019/5/29.
  */
+
 public interface UserMapper {
-    User selectByNameAndPwd(String username, String password);
-    List<User> selectAll();
-    User selectById(Integer id);
-    void insertOne(User user);
-    void updateOne(User user);
-    void delete(Integer id);
+    Integer insertOne(User user);
+    void updateUser(User user);
+
+    /*User selectByNameAndPwd(String username, String password);
+    List<User> selectAll();*/
+    User selectById(@Param("id") Integer id);
+    void deleteUser(@Param("id") Integer id);
 }
