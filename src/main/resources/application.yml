@@ -14,7 +14,7 @@ spring:
       prefix: .jsp
 
   datasource:
-    url: jdbc:mysql://localhost:3306/biglemon?characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/demo?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver

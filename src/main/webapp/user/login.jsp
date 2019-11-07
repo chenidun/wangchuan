@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="login">
-        <form action="<%path%>/user/selectUser" method="post">
+        <form action="/user/selectUser" method="post">
             <br/>
             账号：<input type="text" name="username"/><br/><br/>
             密码：<input type="password" name="password"><br/><br/>
