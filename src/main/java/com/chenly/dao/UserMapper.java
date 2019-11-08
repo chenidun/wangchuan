@@ -18,5 +18,6 @@ public interface UserMapper {
 //    User selectByNameAndPwd(String username, String password);
     List<User> selectAll();
     User selectById(@Param("id") Integer id);
+    User selectByNameAndPwd(@Param("user") User user);
     void deleteUser(@Param("id") Integer id);
 }

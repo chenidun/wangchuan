@@ -34,6 +34,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User login(User user) {
+        return userMapper.selectByNameAndPwd(user);
+    }
+    @Override
     public List<User> selectAll() {
         return userMapper.selectAll();
     }

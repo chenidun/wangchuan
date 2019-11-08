@@ -6,14 +6,9 @@ import com.chenly.model.IOTDevice;
 import com.chenly.model.IOTDeviceStatus;
 import com.chenly.util.HttpClientUtils;
 import com.chenly.util.JsonUtil;
-import com.chenly.util.ParseUtil;
 import com.google.gson.reflect.TypeToken;
-import net.minidev.json.JSONUtil;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.StringUtils;
-
-import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

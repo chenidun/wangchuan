@@ -61,6 +61,11 @@
         select id,username,realname,password,email from user
         where id = #{id,jdbcType=INTEGER}
     </select>
+    <select id="selectByNameAndPwd" resultType="User">
+        select * from user
+        where username = #{user.username,jdbcType=VARCHAR}
+        and pwd = #{user.password,jdbcType=VARCHAR}
+    </select>
 
     <select id="selectAll" resultType="User">
         select id,username,realname,password,email from user

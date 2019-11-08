@@ -1,6 +1,6 @@
 body {
     background-image: url("../img/liufeng1.jpg");
-    /*background-color: aquamarine;*/
+    background-size: 100% 100%;
     font-size: 25px;
 }
 .login {

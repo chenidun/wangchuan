@@ -12,6 +12,7 @@ public interface UserService {
     Integer insertUser(User user);
     void updateUser(User user);
     User selectUser(Integer id);
+    User login(User user);
     List<User> selectAll();
     void deleteUser(Integer id);
 }
