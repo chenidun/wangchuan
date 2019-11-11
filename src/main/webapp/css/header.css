@@ -1,0 +1,54 @@
+.header {
+    /*margin: 100px 40% 200px 40%;*/
+    background-color: #e6c768;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.header-title {
+    /*margin: 50px 60% 100px 40%;*/
+    position: relative;
+    float: left;
+    color: brown;
+    font-family: 华文楷体;
+    font-size: 25px;
+    margin-left: 70px;
+    margin-top: 10px;
+    font-weight: bold;
+
+}
+
+.site-menu-item {
+    position: relative;
+    float: right;
+    margin-right: 30px;
+    /*margin-left: 30px;*/
+    margin-top: 15px;
+    line-height: 24px;
+    font-family: 华文楷体;
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
+}
+
+#side-nav {
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: #cb7138;
+    font-size: 12px;
+    transition: all .3s;
+}
+.side-nav2 {
+    font-family: 幼圆;
+    font-size: 20px;
+    color: #f0ef9b;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom:1px solid #f0ef9b;
+}

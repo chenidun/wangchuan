@@ -39,14 +39,21 @@
             url: "/demo/user/login",
             type: 'post',
             data: JSON.stringify({'username': username, 'password': password}),
-            dataType: "text",
+            dataType: "json",
             contentType: "application/json;charset=utf-8",
             success: function (result) {
-                alert(result);
-                location.href = "../main/list.jsp";
+                if (result.code === 1) {
+                    // 请求成功
+                    alert(result.message);
+                    location.href = "../main/list.jsp";
+                } else if (result.code === 112) {
+                    alert(result.message);
+                    location.href = "../user/login.jsp";
+                }
             },
             error: function (result) {
                 alert("登录失败！~")
+                location.href = "../user/login.jsp";
             }
         })
     }

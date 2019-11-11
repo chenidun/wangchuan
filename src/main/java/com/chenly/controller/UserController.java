@@ -1,6 +1,8 @@
 package com.chenly.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.chenly.constand.WebCodeEnum;
+import com.chenly.dto.WebResult;
 import com.chenly.model.User;
 import com.chenly.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -40,13 +42,19 @@ public class UserController {
 
     @PostMapping("/login")
     @ResponseBody
-    public String selectUser(@RequestBody User user){
+    public WebResult<User> selectUser(@RequestBody User user){
         log.info("用户：：：：" + JSON.toJSONString(user));
-        User login = userService.login(user);
-        if (StringUtils.isEmpty(login)) {
-            return "登录失败";
+        WebResult<User> result = WebResult.build(WebCodeEnum.REQUEST_SUCCESS, null);
+        User loginUser = userService.login(user);
+        if (StringUtils.isEmpty(loginUser)) {
+            result.setCode(WebCodeEnum.USER_NOTEXIST.getCode());
+            result.setMessage(WebCodeEnum.USER_NOTEXIST.getMessage());
+            return result;
         }
-        return "登录成功";
+        result.setCode(WebCodeEnum.REQUEST_SUCCESS.getCode());
+        result.setMessage(WebCodeEnum.REQUEST_SUCCESS.getMessage());
+        result.setData(loginUser);
+        return result;
     }
 
     @RequestMapping("/selectAll")
