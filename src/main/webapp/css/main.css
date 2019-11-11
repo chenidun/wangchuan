@@ -26,3 +26,26 @@ body {
     text-align: center;
     vertical-align: center;
 }
+#main{min-width:1110px}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.img-border {
+    float: left;
+    width: 377px;
+    background-color: #f0ef9b;
+    text-align: center;
+}
+.hhfont {
+    font-family: 幼圆;
+    font-size: 20px;
+    color: black;
+}
+.hhimg {
+    width: 371px;
+    height: 262px;
+    border: 3px solid #f0ef9b;
+}

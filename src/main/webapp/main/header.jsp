@@ -12,6 +12,9 @@
     <div class="header-title">
         铁憨憨的日常
     </div>
+    <div class="unlogin">
+        <a href="../user/login.jsp"><span style="color: black;font-weight: normal">退出</span></a>
+    </div>
     <div class="site-menu-item">
         忘川 <span style="color: black;font-weight: normal">憨憨欢迎你 wow</span>
     </div>

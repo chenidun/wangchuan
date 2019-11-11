@@ -11,7 +11,7 @@
 <div class="left">
     <div id="side-nav">
         <ul style="list-style-type: none">
-            <li class="side-nav2"><a>美不美看大腿</a></li>
+            <li class="side-nav2"><a href="list.jsp">美不美看大腿</a></li>
             <li class="side-nav2"><a>日常咬人记事</a></li>
             <li class="side-nav2"><a>美不美看大腿</a></li>
             <li class="side-nav2"><a>日常咬人记事</a></li>

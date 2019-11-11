@@ -23,7 +23,7 @@
 .site-menu-item {
     position: relative;
     float: right;
-    margin-right: 30px;
+    margin-right: 15px;
     /*margin-left: 30px;*/
     margin-top: 15px;
     line-height: 24px;
@@ -31,6 +31,15 @@
     font-size: 20px;
     font-weight: bold;
     color: brown;
+}
+.unlogin {
+    position: relative;
+    float: right;
+    font-family: 华文楷体;
+    font-size: 18px;
+    color: black;
+    margin-top: 17px;
+    margin-right: 30px;
 }
 
 #side-nav {
