@@ -23,7 +23,7 @@ public class ArticleController {
 
     @PostMapping("/add")
     @ResponseBody
-    public WebResult add(@RequestBody Article article) {
+    public WebResult<Article> add(@RequestBody Article article) {
         WebResult<Article> result = WebResult.build(WebCodeEnum.REQUEST_SUCCESS, null);
         WebResult<Article> webResult = articleService.create(article);
         result.setData(webResult.getData());

@@ -30,9 +30,6 @@
                 <header class="hhfont">憨憨式高冷</header>
                 <img class="hhimg" src="../img/hh3.jpg">
             </div>
-
-
-        </div>
     </main>
 </div>
 </body>
