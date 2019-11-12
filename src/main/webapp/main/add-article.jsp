@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>主页</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -14,21 +13,16 @@
     <%@ include file="left.jsp" %>
     <main id="main">
         <div>
-<%--            h4 {--%>
-<%--            display: block;--%>
-<%--            margin-block-start: 1.33em;--%>
-<%--            margin-block-end: 1.33em;--%>
-<%--            margin-inline-start: 0px;--%>
-<%--            margin-inline-end: 0px;--%>
-<%--            font-weight: bold;--%>
-<%--            }--%>
             <h4 style="text-align: center;margin-top: auto;padding-top: 15px">添加纪事</h4>
         </div>
-        <form style="text-align: center">
-            纪事标题:<input type="text" name="title"><br/>
-            纪事内容：<input type="tel"><br/>
-            <button style="color: brown;font-weight: normal;font-size: 25px; background-color: #c5d4e9;" name="add-article" onclick="add-article()">添加纪事</button>
-        </form>
+        <div>
+            <form style="text-align: center">
+                纪事标题:<input type="text" name="title"><br/><br/>
+                纪事内容：<textarea cols="30" rows="4"></textarea><br/><br/>
+                <button type="button" style="color: brown;font-weight: normal;font-size: 25px; background-color: #c5d4e9;" name="add-article" onclick="add-article()">添加纪事</button>&nbsp;
+                <button type="reset" style="color: brown;font-weight: normal;font-size: 25px; background-color: #c5d4e9;" name="add-article" onclick="add-article()">重置</button>
+            </form>
+        </div>
     </main>
 </div>
 </body>

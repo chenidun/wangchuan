@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenly.dao.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.chenly.model.Article">
+    <result column="content" property="content" jdbcType="VARCHAR"/>
+    <result column="id" property="id" jdbcType="INTEGER"/>
+    <result column="title" property="title" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    content, id, title
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Integer">
+    select
+    <include refid="Base_Column_List"/>
+    from article
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="Integer" >
+    delete from article
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.chenly.model.Article" >
+    insert into article (content, id, title
+    )
+    values (#{content,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}
+    )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chenly.model.Article" useGeneratedKeys="true" keyProperty="id">
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR}, 
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER}, 
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR}, 
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.chenly.model.Article" >
+    update article
+    set content = #{content,jdbcType=VARCHAR}, 
+      title = #{title,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chenly.model.Article" >
+    update article
+    <set >
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -23,8 +23,6 @@
             <input type="password" name="password"><br/><br/>
             <button type="button" name="login" class="btn-primary" onclick="userlogin()">登录</button>
             <button type="button" name="register" class="btn-primary">注册</button>
-            <%--<input type="submit" value="登录" class="anniu"/>
-            <a href="register.jsp"><input type="button" value="注册" class="anniu"/></a>--%>
         </form>
     </div>
 </div>
