@@ -45,7 +45,7 @@
                 if (result.code === 1) {
                     // 请求成功
                     alert(result.message);
-                    location.href = "../main/list.jsp";
+                    location.href = "../main/list-img.jsp";
                 } else if (result.code === 112) {
                     alert(result.message);
                     location.href = "../user/login.jsp";

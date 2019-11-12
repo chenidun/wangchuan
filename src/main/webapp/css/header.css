@@ -61,3 +61,7 @@
     padding-bottom: 20px;
     border-bottom:1px solid #f0ef9b;
 }
+a:link {color: #f0ef9b;text-decoration: none}		/* 未访问的链接 */
+a:visited {color: #f0ef9b;text-decoration: none}	/* 已访问的链接 */
+a:hover {color: white;text-decoration: underline}	/* 鼠标移动到链接上 */
+a:active {color: white}	/* 选定的链接 */

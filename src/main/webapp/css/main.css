@@ -1,8 +1,13 @@
 body {
-    background-image: url("../img/liufeng1.jpg");
+    /*background-image: url("../img/liufeng1.jpg");*/
     /*background-color: aquamarine;*/
     font-size: 25px;
 }
+a:link {color: #f0ef9b;text-decoration: none}		/* 未访问的链接 */
+a:visited {color: #f0ef9b;text-decoration: none}	/* 已访问的链接 */
+a:hover {color: white;text-decoration: underline}	/* 鼠标移动到链接上 */
+a:active {color: white}	/* 选定的链接 */
+
 .login {
     margin: 200px 35% 200px 65%;
     background-color: khaki;
@@ -28,11 +33,11 @@ body {
 }
 #main{min-width:1110px}
 
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-}
+/*a:-webkit-any-link {*/
+/*    color: -webkit-link;*/
+/*    cursor: pointer;*/
+/*    text-decoration: underline;*/
+/*}*/
 .img-border {
     float: left;
     width: 377px;
@@ -48,4 +53,15 @@ a:-webkit-any-link {
     width: 371px;
     height: 262px;
     border: 3px solid #f0ef9b;
+}
+.main-header {
+    color: brown;
+    font-family: 华文楷体;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    width: 98%;
+    height: 30px;
+    position: fixed;
+    float: right;
 }

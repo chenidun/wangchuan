@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
 
 </head>
-<body style="background-image: url()">
+<body>
 <%@ include file="../main/header.jsp" %>
 <div class="container">
     <%@ include file="../main/left.jsp" %>
