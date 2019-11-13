@@ -39,6 +39,9 @@ public class ArticleServiceImpl implements ArticleService {
      */
     @Override
     public WebResult<List<Article>> list() {
-        return null;
+        WebResult<List<Article>> ret = WebResult.build(WebCodeEnum.REQUEST_SUCCESS, null);
+        List<Article> articleList = articleMapper.selectList();
+        ret.setData(articleList);
+        return ret;
     }
 }
