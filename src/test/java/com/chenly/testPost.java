@@ -2,23 +2,27 @@ package com.chenly;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.chenly.model.Article;
 import com.chenly.model.IOTDevice;
 import com.chenly.model.IOTDeviceStatus;
 import com.chenly.util.HttpClientUtils;
 import com.chenly.util.JsonUtil;
 import com.google.gson.reflect.TypeToken;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author wangchuan
  * @date 2019/10/22.
  */
-@SpringBootTest
+//@SpringBootTest
 public class testPost {
     @Test
     public void testPostaccessToken() {
@@ -31,8 +35,8 @@ public class testPost {
 
         String httpStringPostResponse = httpClientUtils.HttpStringPostRequest(url, jsonString, null);
         System.out.println(httpStringPostResponse);
-
     }
+
     @Test
     public void testPost() {
         HttpClientUtils httpClientUtils = new HttpClientUtils();
@@ -46,8 +50,9 @@ public class testPost {
         String jsonString = new JSONObject(map).toJSONString();
         String httpStringPostResponse = httpClientUtils.HttpStringPostRequest(url, jsonString, apiToken);
         String data = JSON.parseObject(httpStringPostResponse).getJSONObject("data").toJSONString();
-        System.out.println("data:::::" + data );
-        Map<String, IOTDevice> deviceMap = JsonUtil.fromJson(data, new TypeToken<Map<String, IOTDevice>>(){}.getType());
+        System.out.println("data:::::" + data);
+        Map<String, IOTDevice> deviceMap = JsonUtil.fromJson(data, new TypeToken<Map<String, IOTDevice>>() {
+        }.getType());
         Map<String, IOTDevice> children1 = getDeviceMap(deviceMap);
         System.out.println("children::::::" + JsonUtil.toJson(children1));
 
@@ -99,6 +104,7 @@ public class testPost {
         }
         return returnMap;
     }
+
     public Map<String, IOTDevice> getChildren1(Map<String, IOTDevice> children) {
         Map<String, IOTDevice> returnMap = children;
         for (String k : children.keySet()) {
@@ -109,7 +115,7 @@ public class testPost {
                     if (vchildren.get(vk).getDeviceId() != null) {
                         vchildren = null;
                         break;
-                    }else {
+                    } else {
                         getChildren1(returnMap);
                     }
                 }
@@ -117,7 +123,8 @@ public class testPost {
         }
         return returnMap;
     }
-        @Test
+
+    @Test
     public void testTrue() {
         if (true) {
             System.out.println("hhhhhhh");
@@ -137,9 +144,43 @@ public class testPost {
         String httpStringPostResponse = httpClientUtils.HttpStringPostRequest(url, jsonString, apiToken);
 //        String data = JSON.parseObject(httpStringPostResponse).getJSONObject("virtual-1531900108441284985").getJSONObject("VT1566208717043522247").toJSONString();
         String data = JSON.parseObject(httpStringPostResponse).getJSONObject("virtual-1531900108441284985").toJSONString();
-        System.out.println("data:::::" + data );
-        Map<String, IOTDeviceStatus> deviceMap = JsonUtil.fromJson(data, new TypeToken<Map<String, IOTDeviceStatus>>(){}.getType());
+        System.out.println("data:::::" + data);
+        Map<String, IOTDeviceStatus> deviceMap = JsonUtil.fromJson(data, new TypeToken<Map<String, IOTDeviceStatus>>() {
+        }.getType());
         System.out.println("children::::::" + JsonUtil.toJson(deviceMap));
 
     }
+
+    @Test
+    public void testList() {
+        List<String> ids = new ArrayList<>();
+        ids.add("1");
+        ids.add("3");
+        ids.add("5");
+        String sql = ids.stream().map(id -> new StringBuffer("JSON_CONTAINS(t_notice.building_id_list, \"")
+                .append(id).append("\")").toString()).collect(Collectors.joining(" or "));
+        // StringUtils.strip(id, "[]")
+        System.out.println(sql);
+    }
+
+    @Test
+    public void testLambda() {
+        List<Integer> ids = new ArrayList<>();
+        ids.add(1);
+        ids.add(3);
+        ids.add(4);
+        // lambda 表达式的写法
+        List<String> list = ids.stream().map(id -> String.valueOf(id)).collect(Collectors.toList());
+        // 静态方法引用格式，是lambda表达式的一个简化写法，所引用的方法其实是lambda
+        // 的方法体实现
+        List<String> list1 = ids.stream().map(String::valueOf).collect(Collectors.toList());
+        Article article = new Article();
+        article.setId(3);
+        // filter 过滤数据
+        long count = ids.stream().filter(article.getId()::equals).count();
+        // map
+        List<StringBuffer> idStrings = ids.stream().filter(id -> id > 2).map(id -> new StringBuffer(String.valueOf(id))).collect(Collectors.toList());
+        idStrings.forEach(id -> System.out.println(id));
+    }
+
 }
