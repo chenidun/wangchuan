@@ -35,9 +35,9 @@
                     <td>标题</td>
                     <td>内容</td>
                 </tr>
-                <% for( Article  article:articleList){ %>
+<%--                <% for( Article  article:articleList){ %>--%>
 
-                <% } %>
+<%--                <% } %>--%>
             </table>
         </div>
     </main>

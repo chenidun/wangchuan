@@ -8,21 +8,17 @@ import com.chenly.model.IOTDeviceStatus;
 import com.chenly.util.HttpClientUtils;
 import com.chenly.util.JsonUtil;
 import com.google.gson.reflect.TypeToken;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * @author wangchuan
  * @date 2019/10/22.
  */
-//@SpringBootTest
+@SpringBootTest
 public class testPost {
     @Test
     public void testPostaccessToken() {
@@ -181,6 +177,7 @@ public class testPost {
         // map
         List<StringBuffer> idStrings = ids.stream().filter(id -> id > 2).map(id -> new StringBuffer(String.valueOf(id))).collect(Collectors.toList());
         idStrings.forEach(id -> System.out.println(id));
-    }
+        Optional<Integer> reduce = ids.stream().filter(id -> id > 2).reduce(Integer::sum);
 
+    }
 }
